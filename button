@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  display: inline-block;
+  cursor: pointer;
+  float:right;
+  margin-top:-63px;
+  margin-right : 80px;
+
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.display{ 
+ background-color:lightgray; 
+ display: None;
+ }
+
+.display a {
+text-decoration:none;
+}
+
+ul li {
+align-items:center;
+list-style-type:none;
+text-align:center;
+padding:55px;
+font-size:25px;
+position:static;
+}
+
+.active, .container:hover {
+  background-color: red; 
+}
+
+.total{
+display:inline-block;
+background-color:orange;
+width:100%;
+}
+</style>
+</head>
+<body>
+<div class="total">
+<h1 class="happy">Happy</h1>
+<button class="container" id="cont">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</button>
+
+<div class="display" id="snow">
+  <ul>
+   <li><a href="#">Home</a></li>
+   <li><a href="#">Services</a></li>
+   <li><a href="#">Contact</a></li>
+   <li><a href="#">Help</a></li>
+  </ul>
+</div>
+</div>
+
+
+<script>
+
+var con=document.getElementById("cont");
+var sow = document.getElementById("snow");
+con.addEventListener("click",function(){
+    this.classList.toggle('change');
+	if(sow.style.display === "block"){
+	sow.style.display= "none";
+	}
+	else{
+	sow.style.display = "block";
+	}
+})
+
+</script>
+
+
+</body>
+</html>
